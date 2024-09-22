@@ -32,7 +32,7 @@ export const getSinglegalServices = async (req,res,next) => {
 
 export const getLegalServices = async (req,res,next) => {
   try {
-    const legalServicesData = await legalServicesModel.find().sort({updatedAt: -1});
+    const legalServicesData = await legalServicesModel.find().sort({createdAt: -1});
     res.status(201).send(legalServicesData);
   } catch (error) {
     next(error)
